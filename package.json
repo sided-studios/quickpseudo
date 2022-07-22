@@ -1,0 +1,6 @@
+{
+  "name": "replsided-mini",
+  "scripts": {
+    "serve": "live-server --quiet --port=8745 ./docs"
+  }
+}

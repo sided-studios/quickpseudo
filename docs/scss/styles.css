@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  background-color: #1e1e1e;
+  padding-top: 0.5%;
+}
+
+#cb {
+  grid-area: 'codeblock';
+  position: absolute;
+  height: 99%;
+  width: 100%;
+}
+/*# sourceMappingURL=styles.css.map */

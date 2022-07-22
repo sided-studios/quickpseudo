@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Replsided Mini</title>
+    <meta
+      name="description"
+      content="IDE to run my friends and I's programming languages."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="scss/styles.css" />
+    <link
+      rel="stylesheet"
+      data-name="vs/editor/editor.main"
+      href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.34.0-dev.20220702/min/vs/editor/editor.main.min.css"
+    />
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+        <div id="cb"></div>
+
+    <script>
+      var require = {
+        paths: {
+          vs: "https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.34.0-dev.20220702/min/vs",
+        },
+      };
+    </script>
+    <!-- Monaco -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.34.0-dev.20220702/min/vs/loader.min.js"
+      integrity="sha512-6bIYsGqvLpAiEBXPdRQeFf5cueeBECtAKJjIHer3BhBZNTV3WLcLA8Tm3pDfxUwTMIS+kAZwTUvJ1IrMdX8C5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.34.0-dev.20220702/min/vs/editor/editor.main.nls.min.js"
+      integrity="sha512-1Cs46QUl+QX8DXuquC0GM8X4nOX5C6FvwHmYEZqI1NrZD15ZrD9aD2xUNortGWpEVo6AdR5sEJuSgNt4E56C2w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.34.0-dev.20220702/min/vs/editor/editor.main.js"
+      integrity="sha512-wLpM8ziXJJFPAOhnfIrRyIIaiFkdIl+h+DEgYGNdZe0ucntb+6WuCrjr7AB5agqLBP1/V0Rkbb6sU4H6p1YD5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+      const editor = monaco.editor.create(document.getElementById('cb'), {
+        value: '',
+        language: "javascript",
+        theme: "vs-dark",
+        lineNumbers: "on",
+        glyphMargin: false,
+        vertical: "auto",
+        horizontal: "auto",
+        verticalScrollbarSize: 10,
+        horizontalScrollbarSize: 10,
+        scrollBeyondLastLine: false,
+        readOnly: false,
+        automaticLayout: true,
+        minimap: {
+          enabled: true,
+        },
+        lineHeight: 25,
+        fontSize: 15
+      });
+    </script>
+  </body>
+</html>
