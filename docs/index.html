@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head><style>div[data-text-ad], .ads-ad, .commercial-unit-desktop-top, .commercial-unit-desktop-rhs, .commercial-unit-mobile-top { display: none !important; }</style><style>#watch7-sidebar-contents { display: none; }</style><style>div#related { display: none; }</style><style> #comments { display: none !important; }</style><style>ytd-live-chat-frame#chat { display: none; }</style><style>#watch-discussion, #watch7-discussion, ytd-comments { display: none; }</style>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Replsided Mini</title>
@@ -50,9 +50,32 @@
     ></script>
 
     <script>
+      monaco.languages.register({ id: 'pseudocode' })
+      
+      const keywords = ['If', 'Else', 'Endif', 'Then', 'Start', 'Stop', 'Begin', 'End']
+      const functions = ['Print', 'Read']
+      const operators = ['+', '-', '/', '*', '<-', '<', '>', '>=', '<=']
+      
+      monaco.languages.setMonarchTokensProvider('pseudocode', {
+    brackets: [
+        ['Start', 'Stop', 'delimiter.terminator1'],
+        ['Begin', 'End', 'delimiter.terminator2'],
+        ['Then', 'Else', 'delimiter.then-else'],
+        ['Then', 'Endif', 'delimiter.then-endif'],
+        ['Else', 'Endif', 'delimiter.else-endif']
+    ],
+    ignoreCase: true,
+    tokenizer: {
+        root: [
+            [/".*?"/, 'string'],
+            [/\/\/.*?/, 'comment']
+        ]
+    }
+})
+      
       const editor = monaco.editor.create(document.getElementById('cb'), {
         value: '',
-        language: "javascript",
+        language: "pseudocode",
         theme: "vs-dark",
         lineNumbers: "on",
         glyphMargin: false,
